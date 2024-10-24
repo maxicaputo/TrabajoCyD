@@ -205,6 +205,21 @@ section{
     background-color: #dbcaca;
 }
 
+/*quienes somos*/
+.texto-completo {
+    display: none;
+}
+
+.ver-mas {
+    color: #8f1717; /* o el color que prefieras */
+    cursor: pointer;
+}
+
+/* Si quieres agregar interactividad con hover */
+.ver-mas:hover {
+    text-decoration: underline;
+}
+
 /*seccion cards*/
 .cards-container {
     display: flex;
@@ -214,11 +229,23 @@ section{
     
 }
 
+ /* Contenedor principal */
+.cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
 /* Estilos de la tarjeta */
 .category-card {
     position: relative;
-    width: 450px; /* w-72 */
+    width: 100%;
     padding-bottom: 2rem;
+    margin: 0 auto;
+    max-width: 350px; /* Máximo ancho en pantallas grandes */
 }
 
 .image-container {
@@ -226,18 +253,20 @@ section{
     overflow: hidden;
     border-radius: 1.5rem;
     width: 100%;
-    height: 300px;
+    padding-bottom: 66.67%; /* Proporción 3:2 */
 }
 
 .overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6));
+    z-index: 1;
 }
 
 .image-container img {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -254,20 +283,62 @@ section{
     left: 50%;
     transform: translateX(-50%);
     min-width: 8rem;
-    padding: 1.0rem 0.5rem;
-    background-color: rgb(155, 55, 55);
+    padding: 0.75rem 2rem;
+    background-color: white;
     border-radius: 9999px;
     border: 2px solid #e5e7eb;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 2;
 }
 
 .title h3 {
     margin: 0;
     text-align: center;
-    color: #000000;
+    color: #1f2937;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 2.5vw, 1rem); /* Texto responsive */
     white-space: nowrap;
+}
+
+/* Media Queries */
+@media (max-width: 640px) {
+    body {
+        padding: 0px;
+    }
+
+    .cards-container {
+        gap: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .category-card {
+        max-width: 100%;
+    }
+
+    .title {
+        padding: 0.5rem 1.5rem;
+        min-width: 7rem;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 350px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        padding: 0.4rem 1.2rem;
+        min-width: 6rem;
+    }
+}
+
+/* Para pantallas grandes */
+@media (min-width: 1024px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        max-width: 1200px;
+    }
 }
 
 
@@ -460,7 +531,7 @@ section{
   .wrapper .twitter:hover,
   .wrapper .twitter:hover .tooltip,
   .wrapper .twitter:hover .tooltip::before {
-    background: #1da1f2;
+    background: #e70e0e;
     color: #fff;
   }
   
@@ -471,6 +542,15 @@ section{
     color: #fff;
   }
   
+  .wrapper li a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
 
  
 

@@ -1,0 +1,1107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color:   #8d2a30  ;
+    --secondary-color: #dfd8d7;
+    --text-color: #000000;
+    --hover-color: #945900;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Header y Navegación */
+header {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.img {
+    padding-left: 0;
+}
+
+.img img {
+    height: 70px;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-grow: 1;
+    
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 1.5rem 0;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+    
+}
+
+/* Menú Hamburguesa */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+/*departamento*/
+
+
+
+.departamentos {
+    background-color:  #511e21 ;
+    color: #fffcfc;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.departamentos h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.departamentos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.departamento {
+    width: 45%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.8s ease;
+}
+
+.departamento:hover {
+    transform: translateY(-5px);
+}
+
+.departamento img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.departamento h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.departamento p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.leer-mas {
+    background-color: #ffffff;
+    color: #8B0000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.leer-mas:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+@media (max-width: 768px) {
+    .departamento {
+        width: 100%;
+    }
+}
+
+
+/* Main Content */
+main {
+    padding-top: 70px; /* Ajustar "PARTE DEL CARRUSEL"según la altura del header */
+}
+
+/* Carrusel */
+.carousel-item img {
+    height: 450px;
+    object-fit: cover;
+}
+
+/* Sección Quiénes Somos */
+.Fundacion {
+    max-width: 800px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    
+}
+
+.Fundacion h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 2%;
+    
+}
+
+.Fundacion h5 {
+    font-weight: 600;
+    text-align: justify;
+    padding: 4%;
+}
+
+section{
+    background-color: #dbcaca;
+}
+
+/*seccion cards*/
+.cards-container {
+    display: flex;
+    gap: 24px;
+    padding: 20px;
+    justify-content: center;
+    
+}
+
+/* Estilos de la tarjeta */
+.category-card {
+    position: relative;
+    width: 450px; /* w-72 */
+    padding-bottom: 2rem;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    width: 100%;
+    height: 300px;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6));
+}
+
+.image-container img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .image-container img {
+    transform: scale(1.05);
+}
+
+.title {
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 8rem;
+    padding: 1.0rem 0.5rem;
+    background-color: rgb(155, 55, 55);
+    border-radius: 9999px;
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.title h3 {
+    margin: 0;
+    text-align: center;
+    color: #000000;
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+
+
+/*imagenens*/
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3%;
+}
+.photo-grid img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+}
+.photo-grid .large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.photo-grid .vertical {
+    grid-row: span 2;
+}
+.photo-grid .horizontal {
+    grid-column: span 2;
+}
+
+/*GRID*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    gap: 10px;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+   
+}
+
+.grid-item {
+    overflow: hidden;
+    position: relative;
+    border-radius: 6px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+/* Tamaños específicos para cada imagen según el layout */
+.item1 {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    
+}
+
+.item2 {
+    grid-column: 1;
+    grid-row: 4 / span 2;
+}
+
+
+
+.item4 {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+}
+
+.item5 {
+    grid-column: 2;
+    grid-row: 4 / span 1;
+}
+
+
+
+.item7 {
+    grid-column: 3;
+    grid-row: 1 / span 1;
+}
+
+.item8 {
+    grid-column: 3;
+    grid-row: 2 / span 4;
+}
+
+/* Responsive para tablets */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-item {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+  
+
+/*icons*/
+
+
+
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #cec6c6;
+    border-radius: 50%;
+    margin: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #ffffff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #fff;
+  }
+  
+
+ 
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
+    margin-top: rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+
+/* Media Queries para Responsividad */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 0;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background-color: var(--secondary-color);
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        padding: 1rem 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active .line2 {
+        opacity: 0;
+    }
+
+    .hamburger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .carousel-item img {
+        height: 300px;
+    }
+}
+
+
+/* Estilos para la sección de inicio de sesión */
+.login-section {
+    background-color: var(--secondary-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.login-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-container h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.login-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.login-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: var(--hover-color);
+}
+
+.login-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.forgot-password, .register-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover, .register-link:hover {
+    color: var(--hover-color);
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 480px) {
+    .login-container {
+        padding: 1.5rem;
+    }
+}
+
+
+/* Estilos para la sección de Aula Virtual con navegación */
+.aula-virtual {
+    background-color: var(--secondary-color);
+    padding-top: 80px; /* Espacio para la barra de navegación fija */
+}
+
+.aula-virtual-nav {
+    background-color: #dfd7d6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.facultad-logo {
+    width: 60px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.login-btn {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 15px;
+}
+
+.login-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.aula-virtual-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+}
+
+.aula-virtual-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.aula-virtual-header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.aula-virtual-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.aula-virtual-card {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.aula-virtual-card h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.curso-list, .anuncio-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.curso-list li, .anuncio-list li {
+    margin-bottom: 0.5rem;
+}
+
+.curso-list a, .ver-todos {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.curso-list a:hover, .ver-todos:hover {
+    color: var(--primary-color);
+}
+
+.ver-todos {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.fecha {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.quick-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.quick-link-btn {
+    display: block;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.quick-link-btn:hover {
+    background-color: var(--hover-color);
+}
+
+
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 3rem;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .login-btn {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+
+    .aula-virtual-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos existentes sin cambios */
+
+/* Estilos para el menú de hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--secondary-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 0.5rem ;
+        
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+    }
+
+    .login-btn {
+        margin-top: 0px;
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+.foter{
+    margin-top: 0px;
+    padding: 12px;
+}
+
+/*Seccion seminario y jornadas*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--secondary-color);
+}
+
+.seminarios-jornadas {
+    padding-top: 80px;
+}
+
+.seminarios-jornadas-nav {
+    background-color: #dfd7d6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.facultad-logo {
+    width: 60px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: rem;
+    padding: 0%;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.login-btn {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 15px;
+}
+
+.login-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.seminarios-jornadas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 4rem;
+    text-align: center;
+}
+
+.seminarios-jornadas-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.seminarios-jornadas-header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.seminarios-jornadas-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.seminarios-jornadas-card {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.seminarios-jornadas-card h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.seminario-list, .jornada-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.seminario-list li, .jornada-list li {
+    margin-bottom: 0.5rem;
+}
+
+.seminario-list a, .ver-todos {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.seminario-list a:hover, .ver-todos:hover {
+    color: var(--primary-color);
+}
+
+.ver-todos {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.fecha {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.quick-link-btn {
+    display: block;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.quick-link-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--secondary-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 0.5rem;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+    }
+
+    .login-btn {
+        margin-top: 0px;
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+.footer {
+    margin: 20px;
+    padding: 126px;
+}

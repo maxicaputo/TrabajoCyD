@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminarios y Jornadas</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section class="seminarios-jornadas">
+        <nav class="seminarios-jornadas-nav">
+            <div class="nav-container">
+                <a href="../index.html"><img src="../img/logo-removebg-preview.png" alt="Logo de la Facultad" class="facultad-logo"></a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./cursos.html">Cursos</a></li>
+                    <li><a href="#" class="active">Seminarios y Jornadas</a></li>
+                    <li><a href="./aulavirtual.html">Aula Virtual</a></li>
+                    <li><a href="./login.html" class="login-btn">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="seminarios-jornadas-container">
+            <div class="seminarios-jornadas-header">
+                <h1>Jornadas Docentes</h1>
+            </div>
+            <div class="seminarios-jornadas-content">
+                <div class="seminarios-jornadas-card">
+                    <h2>Próximos Seminarios</h2>
+                    
+                <div class="seminarios-jornadas-card">
+                    <h2>Accesos Rápidos</h2>
+                    <div class="quick-links">
+                        <a href="http://www.cgepm.gov.ar/jcyd/cuce/235/actividad"class="quick-link-btn">El Juego como estrategia de enseñanza para el Nivel Primario</a>
+                        <a href="#" class="quick-link-btn">Inscripciones</a>
+                        <a href="#" class="quick-link-btn">Descargar Programas</a>
+                        <a href="#" class="quick-link-btn">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer"></div>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

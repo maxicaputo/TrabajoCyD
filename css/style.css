@@ -95,7 +95,7 @@ nav ul li a:hover {
 
 .departamentos {
     background-color:  #511e21 ;
-    color: #683b3b;
+    color:  #511e21 ;
     padding: 50px 0;
     text-align: center;
 }
@@ -204,7 +204,7 @@ main {
 }
 
 section{
-    background-color: #662629  ;
+    background-color:  #511e21  ;
 }
 
 /*quienes somos*/
@@ -1239,4 +1239,5 @@ body {
 .footer {
     margin: 20px;
     padding: 126px;
+    color: #511e21 ;
 }

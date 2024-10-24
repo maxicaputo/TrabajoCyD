@@ -3,7 +3,7 @@
 :root {
     --primary-color:   #8d2a30  ;
     --secondary-color: #dfd8d7;
-    --text-color: #ffffff;
+    --text-color: #591a20 ;
     --hover-color: #945900;
 }
 
@@ -16,12 +16,12 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
+    color:  var(--secondary-color);
 }
 
 /* Header y Navegación */
 header {
-    background-color: #662629 ;
+    background-color:  #ececec ;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
@@ -188,7 +188,7 @@ main {
 }
 
 .Fundacion h2 {
-    color: #b9a7a7;
+    color: #591a20 ;
     margin-bottom: 1rem;
     text-align: center;
     padding: 2%;
@@ -204,7 +204,7 @@ main {
 }
 
 section{
-    background-color:  #511e21  ;
+    background-color:   #ececec  ;
 }
 
 /*quienes somos*/
@@ -611,7 +611,7 @@ section{
 
 /* Footer */
 footer {
-    background-color: #683b3b;
+    background-color: #ececec;
     color: var(--text-color);
     text-align: center;
     padding: 10px;
@@ -1006,6 +1006,7 @@ footer {
 .foter{
     margin-top: 0px;
     padding: 12px;
+    color:  #ececec;
 }
 
 /*Seccion seminario y jornadas*/
@@ -1239,5 +1240,5 @@ body {
 .footer {
     margin: 20px;
     padding: 126px;
-    color: #511e21 ;
+    color:  #ececec ;
 }

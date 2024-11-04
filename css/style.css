@@ -1172,10 +1172,11 @@ nav {
 }
 
 .jornadas-section {
-    background-color: #ffffff; /* Color granate oscuro */
+    background-color: #5f3030; /* Color granate oscuro */
     color: rgb(0, 0, 0);
     padding: 3rem 1rem;
     margin-top: 4rem;
+    
 }
 
 .jornadas-content {
@@ -1192,20 +1193,20 @@ nav {
 }
 
 .jornada-location {
-    background-color: #3d1111; /* Un tono más oscuro para el fondo del título */
-    color: rgb(255, 255, 255);
+    background-color: #b8acac; /* Un tono más oscuro para el fondo del título */
+    color: rgb(114, 29, 29);
     padding: 1rem 2rem;
     border-radius: 25px;
     display: inline-block;
     margin-bottom: 1.5rem;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
 }
 
 .jornada-approval {
-    color: #998484; /* Color más claro para el texto de aprobación */
+    color: #ffffff; /* Color más claro para el texto de aprobación */
     margin-bottom: 2rem;
     font-style: italic;
-    max-width: 600px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }

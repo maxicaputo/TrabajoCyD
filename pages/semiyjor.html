@@ -25,6 +25,7 @@
             <li><a href="./pages/cursos.html">Cursos</a></li>
             <li><a href="#">Jornadas y Seminarios</a></li>
             <li><a href="http://cienciasydeportes.com/login/index.php">Aula Virtual</a></li>
+            <li><a href="./pages/contacto.html">Contacto</a></li>
             <li><a href="http://cienciasydeportes.com/login/index.php"class="login-btn">Login</a></li>
         </ul>  
     </nav>
@@ -55,8 +56,8 @@
                     <p class="jornada-approval">(Aprobadas por Resolución del Ministerio de Ciencias y Tecnología de la Provincia de Misiones)</p>
 
                 <div class="course-card">
-                    <h3 class="course-title">Estructura y Función del Cuerpo Humano: Enseñanza de la Anatomía en el Nivel Primario</h3>
-                    <p class="course-resolution">(Res. Min. Nº 485/24)</p>
+                    <a href="https://www.cgepm.gov.ar/jcyd/cuce/251/actividad"><h3 class="course-title">Estructura y Función del Cuerpo Humano: Enseñanza de la Anatomía en el Nivel Primario</h3>
+                    <p class="course-resolution">(Res. Min. Nº 485/24)</p></a>
                 </div>
                 <div class="course-card">
                     <h3 class="course-title">Perfeccionamiento Anatomofisiológico en el Deporte</h3>
@@ -75,7 +76,7 @@
                     <p class="course-resolution">(Res. Min.Nº 93/24)</p>
                 </div>
     
-                <div class="divider"></div>
+                
     
                 
             <ul class="wrapper">
@@ -128,7 +129,12 @@
         <p>TODO EL FOOTER Y BLA BLAA</p>
     </footer>
 
+    <a href="https://wa.me/message/BX56OV7THTTZN1" target="_blank" class="whatsapp-float" title="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
+        // Código del menú hamburguesa existente
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('nav ul');
     
@@ -142,23 +148,88 @@
             navMenu.classList.remove('active');
         }));
 
+        // Animación de aparición de tarjetas
+        const cards = document.querySelectorAll('.course-card');
 
-    // Animación de aparición de tarjetas
-    const cards = document.querySelectorAll('.course-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('appear');
-        }
-    });
-}, {
-    threshold: 0.1
-});
+        cards.forEach(card => {
+            observer.observe(card);
+        });
 
-cards.forEach(card => {
-    observer.observe(card);
-});
+        // Nuevo código para las imágenes redondeadas
+        const roundImages = document.querySelectorAll('.round-image');
+
+        // Función para manejar la animación al hacer hover
+        roundImages.forEach(image => {
+            // Efecto al pasar el mouse
+            image.addEventListener('mouseenter', () => {
+                image.classList.add('expanded');
+            });
+
+            // Efecto al quitar el mouse
+            image.addEventListener('mouseleave', () => {
+                image.classList.remove('expanded');
+            });
+
+            // Efecto al hacer click (útil para dispositivos móviles)
+            image.addEventListener('click', () => {
+                // Remover la clase expanded de todas las imágenes
+                roundImages.forEach(img => {
+                    if (img !== image) {
+                        img.classList.remove('expanded');
+                    }
+                });
+                // Toggle la clase en la imagen clickeada
+                image.classList.toggle('expanded');
+            });
+        });
+
+        // Animación al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            roundImages.forEach((image, index) => {
+                setTimeout(() => {
+                    image.style.opacity = '0';
+                    image.style.transform = 'translateY(20px)';
+                    requestAnimationFrame(() => {
+                        image.style.transition = 'all 0.5s ease';
+                        image.style.opacity = '1';
+                        image.style.transform = 'translateY(0)';
+                    });
+                }, index * 200); // Retraso escalonado para cada imagen
+            });
+        });
+
+        // Detección de scroll para animaciones
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transform = 'scale(1)';
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        roundImages.forEach(image => {
+            image.style.opacity = '0';
+            image.style.transform = 'scale(0.8)';
+            image.style.transition = 'all 0.5s ease';
+            imageObserver.observe(image);
+        });
     </script>
+    
 </body>
 </html>

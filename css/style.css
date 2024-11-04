@@ -161,6 +161,7 @@ nav ul li a:hover {
 
 
 
+
 @media (max-width: 768px) {
     .departamento {
         width: 100%;
@@ -1193,7 +1194,7 @@ nav {
 }
 
 .jornada-location {
-    background-color: #b8acac; /* Un tono más oscuro para el fondo del título */
+    background-color: #3f1919; /* Un tono más oscuro para el fondo del título */
     color: rgb(114, 29, 29);
     padding: 1rem 2rem;
     border-radius: 25px;
@@ -1236,6 +1237,112 @@ nav {
     border-top: 1px solid rgba(255,255,255,0.2);
     max-width: 500px;
     margin: 3rem auto;
+}
+
+/* Reset básico para asegurar que no hay márgenes ni padding por defecto */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilos base para la sección - ahora sin límite de ancho */
+.jornadas-section {
+        background-color: #682727;  /* Cambiamos a blanco */
+        min-height: 100vh;
+        width: 100%;
+        padding: 2rem;
+    
+}
+
+.jornadas-content {
+    width: 100%;
+    padding: 20px;
+}
+
+/* Estilos para el título y subtítulo */
+.jornada-location {
+    background-color: rgb(236, 223, 223);
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #582828;
+}
+
+.jornada-approval {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Estilos para las tarjetas de cursos */
+.course-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.course-title {
+    color: #582828;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.course-resolution {
+    color: #666;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Línea divisoria */
+.divider {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+    width: 100%;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .jornadas-section {
+        padding: 1rem;
+    }
+    
+    .jornada-location {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.2rem;
+    }
+    
+    .course-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .jornadas-section {
+        padding: 0.5rem;
+    }
+    
+    .jornada-location {
+        font-size: 1.1rem;
+        padding: 0.7rem 1rem;
+    }
 }
 
 
@@ -1316,5 +1423,48 @@ nav {
         .main-title {
             font-size: 2rem;
         }
-        .subtitle {
+    }    
+    .subtitle {
             font-size: 1.5rem;
+        
+            .round-image {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                margin: 0 auto;
+                display: block;
+                object-fit: cover;
+                border: 5px solid var(--primary-color);
+                transition: all 0.3s ease; /* Asegura transiciones suaves */
+                cursor: pointer; /* Indica que es interactivo */
+            }
+            
+            .round-image.expanded {
+                width: 300px;
+                height: 300px;
+                transform: scale(1.1);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            }
+            
+            /* Hacer las imágenes responsive */
+            @media (max-width: 968px) {
+                .round-image {
+                    width: 150px;
+                    height: 150px;
+                }
+                .round-image.expanded {
+                    width: 250px;
+                    height: 250px;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .round-image {
+                    width: 120px;
+                    height: 120px;
+                }
+                .round-image.expanded {
+                    width: 200px;
+                    height: 200px;
+                }
+            }

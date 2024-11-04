@@ -2,7 +2,7 @@
 
 :root {
     --primary-color:   #8d2a30  ;
-    --secondary-color: #dfd8d7;
+    --secondary-color: #e2dcda;
     --text-color: #591a20 ;
     --hover-color: #945900;
 }
@@ -627,7 +627,7 @@ footer {
 
     nav ul {
         position: fixed;
-        top: 70px;
+        top: 90px;
         right: -100%;
         background-color: #ececec;
         flex-direction: column;
@@ -646,7 +646,7 @@ footer {
     }
 
     nav ul li a {
-        padding: 1rem 0;
+        padding: 1rem 3;
     }
 
     .hamburger {
@@ -883,7 +883,7 @@ footer {
 
 .fecha {
     font-size: 0.9rem;
-    color: #666;
+    color: #302d2d;
 }
 
 .quick-links {
@@ -1006,239 +1006,314 @@ footer {
 .foter{
     margin-top: 0px;
     padding: 12px;
-    color:  #ececec;
+    color:  #ffffff;
 }
 
 /*Seccion seminario y jornadas*/
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Estilos para fijar el header */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background-color: var(--secondary-color);
+    color:  var(--secondary-color);
 }
 
-.seminarios-jornadas {
-    padding-top: 80px;
-}
-
-.seminarios-jornadas-nav {
-    background-color: #dfd7d6;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+header {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 1000;
+    width: 100%;
+    background-color: white; /* o el color que prefieras */
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Añade una sombra sutil */
 }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Ajustar el nav dentro del header */
+nav {
+    width: 100%;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
 }
 
-.facultad-logo {
-    width: 60px;
-    height: auto;
+/* Ajustar el contenido principal para que no quede detrás del header */
+.main-content {
+    padding-top: 80px; /* Ajusta este valor según la altura de tu header */
 }
 
-.nav-links {
-    display: flex;
-    list-style-type: none;
-    margin: rem;
-    padding: 0%;
+/* Asegurar que la navegación móvil también funcione correctamente */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 80px; /* Ajusta este valor según la altura de tu header */
+    }
+    
+    .main-content {
+        padding-top: 60px; /* Ajusta si es necesario para móviles */
+    }
 }
 
-.nav-links li {
-    margin-left: 1.5rem;
+
+.main-content {
+    max-width: 1800px;
+    margin: 6rem auto 2rem;
+    padding: 0 1rem;
 }
 
-.nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+
+
+.images-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 2rem auto 4rem;
+    max-width: 1000px;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--primary-color);
-}
-
-.login-btn {
-    background-color: var(--primary-color);
-    color: #ffffff !important;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin: 15px;
-}
-
-.login-btn:hover {
-    background-color: var(--hover-color);
-}
-
-.seminarios-jornadas-container {
-    max-width: 1200px;
+.round-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     margin: 0 auto;
-    padding: 3rem 4rem;
+    display: block;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.main-title {
+    font-size: 4rem;
     text-align: center;
+    color: #681717;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 2rem 0;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
 }
 
-.seminarios-jornadas-header {
-    text-align: center;
-    margin-bottom: 2rem;
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+    
 }
 
-.seminarios-jornadas-header h1 {
-    color: var(--primary-color);
-    font-size: 2.5rem;
+.subtitle {
+    font-size: 3rem;
+    color: #681717;
+    margin-top: -1rem;
+    
 }
 
-.seminarios-jornadas-content {
+.courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-bottom: 4rem;
 }
 
-.seminarios-jornadas-card {
-    background-color: whitesmoke;
+.course-card {
+    background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.seminarios-jornadas-card h2 {
+.course-card.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-title {
     color: var(--primary-color);
-    font-size: 1.5rem;
     margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
-.seminario-list, .jornada-list {
-    list-style-type: none;
-    padding: 0;
+.course-resolution {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-top: 1rem;
 }
 
-.seminario-list li, .jornada-list li {
+.jornadas-section {
+    background-color: var(--primary-color);
+    color: rgb(0, 0, 0);
+    padding: 3rem 1rem;
+    margin-top: 4rem;
+}
+
+.jornadas-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.jornada-item {
+    background: rgb(255, 255, 255);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+   
+}
+
+.jornada-item:hover {
+    transform: translateY(-5px);
+}
+
+.jornadas-section {
+    background-color: #ffffff; /* Color granate oscuro */
+    color: rgb(0, 0, 0);
+    padding: 3rem 1rem;
+    margin-top: 4rem;
+}
+
+.jornadas-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.jornadas-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.jornada-location {
+    background-color: #3d1111; /* Un tono más oscuro para el fondo del título */
+    color: rgb(255, 255, 255);
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.jornada-approval {
+    color: #998484; /* Color más claro para el texto de aprobación */
+    margin-bottom: 2rem;
+    font-style: italic;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.courses-list {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.course-item {
+    margin-bottom: 1.5rem;
+}
+
+.course-name {
+    color: #852d2d; /* Color más claro para los nombres de los cursos */
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
 
-.seminario-list a, .ver-todos {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.seminario-list a:hover, .ver-todos:hover {
-    color: var(--primary-color);
-}
-
-.ver-todos {
-    display: inline-block;
-    margin-top: 1rem;
-    font-weight: bold;
-}
-
-.fecha {
+.course-resolution {
+    color: #cc8888; /* Color para las resoluciones */
     font-size: 0.9rem;
-    color: #666;
 }
 
-.quick-links {
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+.divider {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    max-width: 500px;
+    margin: 3rem auto;
 }
 
-.quick-link-btn {
-    display: block;
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 0.75rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+
+
+@media (max-width: 768px) {
+    .jornada-location {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .jornada-approval {
+        padding: 0 1rem;
+        font-size: 0.9rem;
+    }
+
+    .course-name {
+        font-size: 1rem;
+    }
 }
 
-.quick-link-btn:hover {
-    background-color: var(--hover-color);
+@media (max-width: 968px) {
+    .images-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .round-image {
+        width: 150px;
+        height: 150px;
+    }
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 1rem;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-color);
-    margin-bottom: 5px;
-    transition: all 0.3s ease;
-}
-
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu.active {
         display: flex;
     }
 
-    .nav-links {
-        position: absolute;
-        right: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: var(--secondary-color);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    .courses-grid {
+        grid-template-columns: 1fr;
     }
 
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links li {
-        margin: 0.5rem;
-    }
-
-    .nav-container {
-        flex-wrap: wrap;
-    }
-
-    .login-btn {
-        margin-top: 0px;
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+    .logo-container {
+        scale: 0.8;
     }
 }
 
-.footer {
-    margin: 20px;
-    padding: 126px;
-    color:  #ececec ;
+@media (max-width: 480px) {
+    .images-grid {
+        grid-template-columns: 1fr;
+    }
 }
+
+@media (max-width: 968px) {
+    .main-title {
+        font-size: 3rem;
+    }
+    .subtitle {
+        font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+        .main-title {
+            font-size: 2rem;
+        }
+        .subtitle {
+            font-size: 1.5rem;

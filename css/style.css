@@ -19,13 +19,14 @@ body {
     color:  var(--secondary-color);
 }
 
-/* Header y Navegación */
 header {
-    background-color:  #ececec ;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    z-index: 1000;
+    background-color: white; /* o el color que prefieras */
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Añade una sombra sutil */
 }
 
 
@@ -171,14 +172,27 @@ nav ul li a:hover {
 
 /* Main Content */
 main {
-    padding-top: 70px; /* Ajustar "PARTE DEL CARRUSEL"según la altura del header */
-}
-
-/* Carrusel */
-.carousel-item img {
+    padding-top: 70px; /* Ajustar según la altura del header */
+  }
+  
+  /* Carrusel */
+  .carousel-item img {
+    width: 100%;
     height: 450px;
     object-fit: cover;
-}
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-item img {
+      height: 350px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carousel-item img {
+      height: 250px;
+    }
+  }
 
 /* Sección Quiénes Somos */
 .Fundacion {
@@ -1008,11 +1022,7 @@ footer {
 
 /*Seccion seminario y jornadas*/
 /* Estilos para fijar el header */
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color:  var(--secondary-color);
-}
+
 
 header {
     position: fixed;
@@ -1530,3 +1540,134 @@ nav {
                 border: none;
                 background-color: transparent;
               }
+
+
+              /*contactanos*/
+
+              
+          
+  /* Otros estilos previos */
+
+.contact-card {
+    background-color: #dadada;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    width: 100%;
+    max-width: 800px;
+    margin: 150px auto; /* Espacio adicional por arriba */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-card h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #612a2a;
+  }
+  
+  .contact-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    
+  }
+  
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .contact-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #5a2323;
+  }
+  
+  .contact-info a {
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-info a:hover {
+    color: #000;
+  }
+  
+  .contact-info a i {
+    font-size: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    .contact-card {
+      padding: 24px;
+    }
+  
+    .contact-info a {
+      font-size: 14px;
+    }
+  
+    .contact-info a i {
+      font-size: 18px;
+    }
+  }
+
+  
+
+  main {
+    padding-top: 70px; /* Ajustar según la altura del header */
+  }
+  
+  /* Carrusel */
+  .carousel-item img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-item img {
+      height: 430px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carousel-item img {
+      height: 160px;
+    }
+  }
+
+
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+  .full-screen-image {
+    background-image: url('../img/cursosfoto.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 110%;
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .full-screen-image {
+        background-size: contain;
+        background-position: top;
+    }
+}
+
+
+
+ 

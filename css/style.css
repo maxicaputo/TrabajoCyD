@@ -1647,27 +1647,26 @@ nav {
   }
 
 
-  body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-  .full-screen-image {
-    background-image: url('../img/cursosfoto.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 110%;
+  .foto {
     width: 100%;
-}
-@media (max-width: 767px) {
-    .full-screen-image {
-        background-size: contain;
-        background-position: top;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .foto img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  @media (max-width: 768px) {
+    .foto img {
+      width: auto;
+      height: 100%;
+      object-fit: cover;
     }
-}
+  }
 
-
-
- 

@@ -1786,3 +1786,11 @@ main {
 .contact-info a i {
     font-size: 18px;
 }
+
+@media (max-width: 576px) {
+    .carousel-item img {
+        height: 153px;
+        width: 100%;
+        object-fit: cover;
+    }
+}

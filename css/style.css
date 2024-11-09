@@ -1643,7 +1643,7 @@ main {
     
     .full-screen-image {
         background-image: url('../img/bannersmobile.jpg');
-        height: calc(100vh - 110px);
+        height: calc(67vh - 10px);
         margin-top: 60px;
         background-position: 75% center;
     }

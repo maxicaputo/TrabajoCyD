@@ -184,13 +184,15 @@ main {
   
   @media (max-width: 768px) {
     .carousel-item img {
-      height: 350px;
+      height: 450px;
+      height: calc(67vh - 10px);
     }
   }
   
   @media (max-width: 576px) {
     .carousel-item img {
-      height: 250px;
+      height: 450px;
+      height: calc(67vh - 10px);
     }
   }
 
@@ -1638,7 +1640,7 @@ main {
 /* Media queries */
 @media (max-width: 768px) {
     .carousel-item img {
-        height: 430px;
+        height: 230px;
     }
     
     .full-screen-image {
@@ -1656,7 +1658,7 @@ main {
 
 @media (max-width: 576px) {
     .carousel-item img {
-        height: 160px;
+        height: 150px;
     }
 }
 

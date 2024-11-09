@@ -1359,7 +1359,7 @@ button {
 /* Tarjeta de contacto */
 .contact-card {
     background-image: url('../img/fondo\ conta.jpeg');
-    background-size: 150%;  /* Añadido para mejor visualización */
+    background-size: 200%;  /* Añadido para mejor visualización */
     background-position: center;  /* Añadido para mejor visualización */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

@@ -70,3 +70,4 @@ roundImages.forEach(image => {
     image.style.transition = 'all 0.5s ease';
     observer.observe(image);
 });
+

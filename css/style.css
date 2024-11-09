@@ -1629,29 +1629,27 @@ main {
 .full-screen-image {
     background-image: url('../img/rubiacursos.jpg');
     background-size: cover;
-    background-position: right center;
+    background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: calc(100vh - 80px);
-    margin-top: 80px;
-    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Media queries */
-@media (max-width: 768px) {
-    .carousel-item img {
-        height: 140px;
-        width: 300%;
-        object-fit: cover;
-    }
-}
-    
+
+
+
+@media (max-width: 576px) {  
     .full-screen-image {
         background-image: url('../img/bannersmobile.jpg');
-        height: calc(67vh - 10px);
-        margin-top: 60px;
-        background-position: 75% center;
+        height: calc(80vh - 10px);
+        margin-top: 0;  /* Eliminamos el margen */
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
+}
     
     .contact-card {
         margin: 100px auto;  /* Ajustado para móviles */
@@ -1659,13 +1657,8 @@ main {
     }
 
 
-@media (max-width: 576px) {
-    .carousel-item img {
-        height: 150px;
-        width: 200%;
-        object-fit: cover;
-    }
-}
+
+
 
 
 @media (max-width: 480px) {
@@ -1684,7 +1677,6 @@ main {
 
 
 
-/*contador contacto*/
 .stats-container {
     width: 100%;
     max-width: 1200px;
@@ -1754,4 +1746,43 @@ main {
     .stat-number { 
         font-size: 4rem; 
     }
+}
+
+
+
+
+
+
+/* Y para la imagen */
+@media (max-width: 768px) {
+    .full-screen-image {
+        display: block;
+        background-image: url('../img/bannersmobile.jpg');
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: calc(100vh - 110px);
+        margin-top: 0; /* Eliminamos el margin-top de 60px */
+        padding-top: 0; /* Aseguramos que no haya padding */
+    }
+}
+/* Ajustes adicionales para pantallas más pequeñas */
+@media (max-width: 480px) {
+    .full-screen-image {
+        background-position: center; /* Centrado en ambos ejes */
+        width: 100%;
+    }
+}
+
+.full-screen-image {
+    background-position: center center;
+}
+
+.contact-info a {
+    font-size: 14px;
+}
+
+.contact-info a i {
+    font-size: 18px;
 }

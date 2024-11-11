@@ -1418,6 +1418,78 @@ button {
 }
 
 
+.stats-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    width: 100%;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    line-height: 1.0;
+    color:  var(--text-color);
+}
+
+.plus {
+    color: #696969;
+    font-weight: 800; /* Extra bold para el signo + */
+}
+
+.stat-label {
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 700; /* Bold para las etiquetas */
+    text-transform: uppercase; /* Opcional: hace las etiquetas en mayúsculas */
+    letter-spacing: 0.5px; /* Mejor espaciado entre letras */
+}
+
+/* Responsive */
+@media (min-width: 480px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .stat-number { 
+        font-size: 3rem; 
+    }
+    .stat-label {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-number { 
+        font-size: 3.5rem; 
+    }
+    .stat-label {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .stat-number { 
+        font-size: 4rem; 
+    }
+}
+
+
 
 
 /* Estilos para las tarjetas de cursos */
@@ -1612,7 +1684,6 @@ button {
             }
 
 
-
 /* Estilos principales */
 main {
     padding-top: 70px;
@@ -1629,37 +1700,38 @@ main {
 .full-screen-image {
     background-image: url('../img/rubiacursos.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: right center;
     background-repeat: no-repeat;
     width: 100%;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+    overflow-x: hidden;
 }
 
-
-
-
-@media (max-width: 576px) {  
+/* Media queries */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 230px;
+    }
+    
     .full-screen-image {
         background-image: url('../img/bannersmobile.jpg');
-        height: calc(80vh - 10px);
-        margin-top: 0;  /* Eliminamos el margen */
-        background-position: center center;
-        background-size: contain;
-        background-repeat: no-repeat;
+        height: calc(67vh - 10px);
+        margin-top: 60px;
+        background-position: 75% center;
     }
-}
     
     .contact-card {
         margin: 100px auto;  /* Ajustado para móviles */
         padding: 24px;
     }
+}
 
-
-
-
-
+@media (max-width: 576px) {
+    .carousel-item img {
+        height: 150px;
+    }
+}
 
 @media (max-width: 480px) {
     .full-screen-image {
@@ -1672,134 +1744,5 @@ main {
     
     .contact-info a i {
         font-size: 18px;
-    }
-}
-
-
-
-.stats-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-    width: 100%;
-}
-
-.stat-item {
-    text-align: center;
-    padding: 1rem;
-}
-
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    line-height: 1.0;
-    color:  var(--text-color);
-}
-
-.plus {
-    color: #696969;
-    font-weight: 800; /* Extra bold para el signo + */
-}
-
-.stat-label {
-    color: #000000;
-    font-size: 1rem;
-    font-weight: 700; /* Bold para las etiquetas */
-    text-transform: uppercase; /* Opcional: hace las etiquetas en mayúsculas */
-    letter-spacing: 0.5px; /* Mejor espaciado entre letras */
-}
-
-/* Responsive */
-@media (min-width: 480px) {
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .stat-number { 
-        font-size: 3rem; 
-    }
-    .stat-label {
-        font-size: 1.1rem;
-    }
-}
-
-@media (min-width: 768px) {
-    .stats-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    .stat-number { 
-        font-size: 3.5rem; 
-    }
-    .stat-label {
-        font-size: 1.2rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .stat-number { 
-        font-size: 4rem; 
-    }
-}
-
-
-
-
-
-
-/* Y para la imagen */
-@media (max-width: 768px) {
-    .full-screen-image {
-        display: block;
-        background-image: url('../img/bannersmobile.jpg');
-        background-size: contain;
-        background-position: center center;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: calc(100vh - 110px);
-        margin-top: 0; /* Eliminamos el margin-top de 60px */
-        padding-top: 0; /* Aseguramos que no haya padding */
-    }
-}
-/* Ajustes adicionales para pantallas más pequeñas */
-@media (max-width: 480px) {
-    .full-screen-image {
-        background-position: center; /* Centrado en ambos ejes */
-        width: 100%;
-        display: block;
-        background-size: contain;
-        background-position: center center;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: calc(100vh - 110px);
-        margin-top: 0; /* Eliminamos el margin-top de 60px */
-        padding-top: 0; /* Aseguramos que no haya padding */
-    }
-    }
-
-
-.full-screen-image {
-    background-position: center center;
-}
-
-.contact-info a {
-    font-size: 14px;
-}
-
-.contact-info a i {
-    font-size: 18px;
-}
-
-@media (max-width: 576px) {
-    .carousel-item img {
-        height: 153px;
-        width: 100%;
-        object-fit: cover;
     }
 }

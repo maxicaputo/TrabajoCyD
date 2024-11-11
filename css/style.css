@@ -1772,8 +1772,17 @@ main {
     .full-screen-image {
         background-position: center; /* Centrado en ambos ejes */
         width: 100%;
+        display: block;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: calc(100vh - 110px);
+        margin-top: 0; /* Eliminamos el margin-top de 60px */
+        padding-top: 0; /* Aseguramos que no haya padding */
     }
-}
+    }
+
 
 .full-screen-image {
     background-position: center center;

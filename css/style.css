@@ -1729,7 +1729,7 @@ main {
 
 @media (max-width: 576px) {
     .carousel-item img {
-        height: 170px;
+        height: 165px;
     }
 }
 
